@@ -1,8 +1,9 @@
+# 🍊🍊🍊ordinals is a global movement🍊🍊🍊🍊
+
+To assist more people join the translation of handbook 
+Here I uploaded the po file for translation
+
 # po file download
-
-To assist more people join the translation of handbook
-
-Here I attach the po file for translation
 
 1,You may simply downnload the po file or `message.pot`
 
@@ -38,4 +39,4 @@ satoshi donation :
 ```
 bc1pewnspy9r88vzvv073rrykvwx3k8h7uultz0qts92y9y9gnn4klmqre3jyq
 ```
-# Ordinals is a global movement
+
