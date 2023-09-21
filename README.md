@@ -24,7 +24,11 @@ msgstr "-------translation here-----"
 
 Ongoing *2023-09-21* translation :
 
-`ru.po`  - Russia Version by [@hleplesss](https://twitter.com/hleplesss)
+`ru.po`  - Russian Version by [@hleplesss](https://twitter.com/hleplesss)
+
+`de.po`  - German Version by [@ordinalHO](https://twitter.com/ordinalHO)
+
+`ar.po`  - Arabic Version by [@ordinalHO](https://twitter.com/ordinalHO)
 
 # Translated docs including :
 
@@ -33,6 +37,7 @@ Ongoing *2023-09-21* translation :
 `ja.po` - Japanese Version by [Dr.Jinglee](https://twitter.com/ordjingle)
 
 `es.po` - Spanish Version by [@0xZerone](https://twitter.com/0xZerone)
+
 
 # donation of Satoshi
 
