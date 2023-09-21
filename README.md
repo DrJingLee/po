@@ -28,14 +28,14 @@ Ongoing *2023-09-21* translation :
 
 # Translated docs including :
 
-`zh.po` - Chinese Version
+`zh.po` - Chinese Version by [Dr.Jinglee](https://twitter.com/ordjingle)
 
-`ja.po` - Japanese Version
+`ja.po` - Japanese Version by [Dr.Jinglee](https://twitter.com/ordjingle)
 
-`es.po` - Spanish Version
+`es.po` - Spanish Version by [@0xZerone](https://twitter.com/0xZerone)
 
-# donation
-satoshi donation : 
+# donation of Satoshi
+
 ```
 bc1pewnspy9r88vzvv073rrykvwx3k8h7uultz0qts92y9y9gnn4klmqre3jyq
 ```
