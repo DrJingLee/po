@@ -9,7 +9,7 @@ Here I uploaded the po file for translation
 
 2,Rename it into your own language following the [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 
-3,Open it with [VSCODE](https://code.visualstudio.com/) or poeditor such as [Poedit](https://poedit.net/)
+3,Open it with [VSCODE](https://code.visualstudio.com/) or po file editors such as [Poedit](https://poedit.net/)
 
 4,Put you translation one by one inside the **msgstr ""** ie:
 
