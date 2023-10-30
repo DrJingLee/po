@@ -12,105 +12,125 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/SUMMARY.md:2
+#: src/SUMMARY.md:4
 #: src/introduction.md:1
 msgid "Introduction"
 msgstr ""
 
-#: src/SUMMARY.md:3
+#: src/SUMMARY.md:5
 msgid "Overview"
 msgstr ""
 
-#: src/SUMMARY.md:4
+#: src/SUMMARY.md:6
 #: src/digital-artifacts.md:1
 msgid "Digital Artifacts"
 msgstr ""
 
-#: src/SUMMARY.md:5
-#: src/SUMMARY.md:13
+#: src/SUMMARY.md:7
+#: src/SUMMARY.md:17
 #: src/overview.md:221
 #: src/inscriptions.md:1
 msgid "Inscriptions"
 msgstr ""
 
-#: src/SUMMARY.md:6
+#: src/SUMMARY.md:8
+#: src/inscriptions/metadata.md:1
+msgid "Metadata"
+msgstr ""
+
+#: src/SUMMARY.md:9
 #: src/inscriptions/provenance.md:1
 msgid "Provenance"
 msgstr ""
 
-#: src/SUMMARY.md:7
+#: src/SUMMARY.md:10
 #: src/inscriptions/recursion.md:1
 msgid "Recursion"
 msgstr ""
 
-#: src/SUMMARY.md:8
+#: src/SUMMARY.md:11
+#: src/inscriptions/pointer.md:1
+msgid "Pointer"
+msgstr ""
+
+#: src/SUMMARY.md:12
 msgid "FAQ"
 msgstr ""
 
-#: src/SUMMARY.md:9
+#: src/SUMMARY.md:13
 msgid "Contributing"
 msgstr ""
 
-#: src/SUMMARY.md:10
+#: src/SUMMARY.md:14
 #: src/donate.md:1
 msgid "Donate"
 msgstr ""
 
-#: src/SUMMARY.md:11
+#: src/SUMMARY.md:15
 msgid "Guides"
 msgstr ""
 
-#: src/SUMMARY.md:12
+#: src/SUMMARY.md:16
 msgid "Explorer"
 msgstr ""
 
-#: src/SUMMARY.md:14
+#: src/SUMMARY.md:18
+#: src/guides/batch-inscribing.md:1
+msgid "Batch Inscribing"
+msgstr ""
+
+#: src/SUMMARY.md:19
 #: src/guides/sat-hunting.md:1
 msgid "Sat Hunting"
 msgstr ""
 
-#: src/SUMMARY.md:15
+#: src/SUMMARY.md:20
+#: src/guides/teleburning.md:1
+msgid "Teleburning"
+msgstr ""
+
+#: src/SUMMARY.md:21
 #: src/guides/collecting.md:1
 msgid "Collecting"
 msgstr ""
 
-#: src/SUMMARY.md:16
+#: src/SUMMARY.md:22
 #: src/guides/sat-hunting.md:239
 msgid "Sparrow Wallet"
 msgstr ""
 
-#: src/SUMMARY.md:17
+#: src/SUMMARY.md:23
 #: src/guides/testing.md:1
 msgid "Testing"
 msgstr ""
 
-#: src/SUMMARY.md:18
+#: src/SUMMARY.md:24
 #: src/guides/moderation.md:1
 msgid "Moderation"
 msgstr ""
 
-#: src/SUMMARY.md:19
+#: src/SUMMARY.md:25
 #: src/guides/reindexing.md:1
 msgid "Reindexing"
 msgstr ""
 
-#: src/SUMMARY.md:20
+#: src/SUMMARY.md:26
 msgid "Bounties"
 msgstr ""
 
-#: src/SUMMARY.md:21
+#: src/SUMMARY.md:27
 msgid "Bounty 0: 100,000 sats Claimed!"
 msgstr ""
 
-#: src/SUMMARY.md:22
+#: src/SUMMARY.md:28
 msgid "Bounty 1: 200,000 sats Claimed!"
 msgstr ""
 
-#: src/SUMMARY.md:23
+#: src/SUMMARY.md:29
 msgid "Bounty 2: 300,000 sats Claimed!"
 msgstr ""
 
-#: src/SUMMARY.md:24
+#: src/SUMMARY.md:30
 msgid "Bounty 3: 400,000 sats"
 msgstr ""
 
@@ -554,7 +574,7 @@ msgid "`common`: 1.9 quadrillion"
 msgstr ""
 
 #: src/overview.md:186
-msgid "`uncommon`: 745,855"
+msgid "`uncommon`: 808,262"
 msgstr ""
 
 #: src/overview.md:187
@@ -1018,6 +1038,147 @@ msgid ""
 "`Content-Security-Policy` headers."
 msgstr ""
 
+#: src/inscriptions/metadata.md:4
+msgid ""
+"Inscriptions may include [CBOR](https://cbor.io/) metadata, stored as data "
+"pushes in fields with tag `5`. Since data pushes are limited to 520 bytes, "
+"metadata longer than 520 bytes must be split into multiple tag `5` fields, "
+"which will then be concatenated before decoding."
+msgstr ""
+
+#: src/inscriptions/metadata.md:9
+msgid ""
+"Metadata is human readable, and all metadata will be displayed to the user "
+"with its inscription. Inscribers are encouraged to consider how metadata "
+"will be displayed, and make metadata concise and attractive."
+msgstr ""
+
+#: src/inscriptions/metadata.md:13
+msgid "Metadata is rendered to HTML for display as follows:"
+msgstr ""
+
+#: src/inscriptions/metadata.md:15
+msgid ""
+"`null`, `true`, `false`, numbers, floats, and strings are rendered as plain "
+"text."
+msgstr ""
+
+#: src/inscriptions/metadata.md:17
+msgid "Byte strings are rendered as uppercase hexadecimal."
+msgstr ""
+
+#: src/inscriptions/metadata.md:18
+msgid ""
+"Arrays are rendered as `<ul>` tags, with every element wrapped in `<li>` "
+"tags."
+msgstr ""
+
+#: src/inscriptions/metadata.md:20
+msgid ""
+"Maps are rendered as `<dl>` tags, with every key wrapped in `<dt>` tags, and "
+"every value wrapped in `<dd>` tags."
+msgstr ""
+
+#: src/inscriptions/metadata.md:22
+msgid ""
+"Tags are rendered as the tag , enclosed in a `<sup>` tag, followed by the "
+"value."
+msgstr ""
+
+#: src/inscriptions/metadata.md:25
+msgid ""
+"CBOR is a complex spec with many different data types, and multiple ways of "
+"representing the same data. Exotic data types, such as tags, floats, and "
+"bignums, and encoding such as indefinite values, may fail to display "
+"correctly or at all. Contributions to `ord` to remedy this are welcome."
+msgstr ""
+
+#: src/inscriptions/metadata.md:30
+#: src/inscriptions/provenance.md:27
+#: src/guides/teleburning.md:23
+#: src/guides/testing.md:18
+#: src/guides/reindexing.md:15
+msgid "Example"
+msgstr ""
+
+#: src/inscriptions/metadata.md:33
+msgid ""
+"Since CBOR is not human readable, in these examples it is represented as "
+"JSON. Keep in mind that this is _only_ for these examples, and JSON metadata "
+"will _not_ be displayed correctly."
+msgstr ""
+
+#: src/inscriptions/metadata.md:37
+msgid ""
+"The metadata `{\"foo\":\"bar\",\"baz\":[null,true,false,0]}` would be "
+"included in an inscription as:"
+msgstr ""
+
+#: src/inscriptions/metadata.md:39
+msgid ""
+"```\n"
+"OP_FALSE\n"
+"OP_IF\n"
+"    ...\n"
+"    OP_PUSH 0x05 OP_PUSH '{\"foo\":\"bar\",\"baz\":[null,true,false,0]}'\n"
+"    ...\n"
+"OP_ENDIF\n"
+"```"
+msgstr ""
+
+#: src/inscriptions/metadata.md:48
+msgid "And rendered as:"
+msgstr ""
+
+#: src/inscriptions/metadata.md:50
+msgid ""
+"```\n"
+"<dl>\n"
+"  ...\n"
+"  <dt>metadata</dt>\n"
+"  <dd>\n"
+"    <dl>\n"
+"      <dt>foo</dt>\n"
+"      <dd>bar</dd>\n"
+"      <dt>baz</dt>\n"
+"      <dd>\n"
+"        <ul>\n"
+"          <li>null</li>\n"
+"          <li>true</li>\n"
+"          <li>false</li>\n"
+"          <li>0</li>\n"
+"        </ul>\n"
+"      </dd>\n"
+"    </dl>\n"
+"  </dd>\n"
+"  ...\n"
+"</dl>\n"
+"```"
+msgstr ""
+
+#: src/inscriptions/metadata.md:73
+msgid "Metadata longer than 520 bytes must be split into multiple fields:"
+msgstr ""
+
+#: src/inscriptions/metadata.md:75
+msgid ""
+"```\n"
+"OP_FALSE\n"
+"OP_IF\n"
+"    ...\n"
+"    OP_PUSH 0x05 OP_PUSH '{\"very\":\"long\",\"metadata\":'\n"
+"    OP_PUSH 0x05 OP_PUSH '\"is\",\"finally\":\"done\"}'\n"
+"    ...\n"
+"OP_ENDIF\n"
+"```"
+msgstr ""
+
+#: src/inscriptions/metadata.md:85
+msgid ""
+"Which would then be concatinated into "
+"`{\"very\":\"long\",\"metadata\":\"is\",\"finally\":\"done\"}`."
+msgstr ""
+
 #: src/inscriptions/provenance.md:4
 msgid ""
 "The owner of an inscription can create child inscriptions, trustlessly "
@@ -1063,12 +1224,6 @@ msgid ""
 "_NB_ The bytes of a bitcoin transaction ID are reversed in their text "
 "representation, so the serialized transaction ID will be in the opposite "
 "order."
-msgstr ""
-
-#: src/inscriptions/provenance.md:27
-#: src/guides/testing.md:18
-#: src/guides/reindexing.md:15
-msgid "Example"
 msgstr ""
 
 #: src/inscriptions/provenance.md:29
@@ -1214,6 +1369,93 @@ msgstr ""
 msgid "`/blocktime`: UNIX time stamp of latest block."
 msgstr ""
 
+#: src/inscriptions/pointer.md:4
+msgid ""
+"In order to make an inscription on a sat other than the first of its input, "
+"a zero-based integer, called the \"pointer\", can be provided with tag `2`, "
+"causing the inscription to be made on the sat at the given position in the "
+"outputs. If the pointer is equal to or greater than the number of total sats "
+"in the outputs of the inscribe transaction, it is ignored, and the "
+"inscription is made as usual. The value of the pointer field is a little "
+"endian integer, with trailing zeroes ignored."
+msgstr ""
+
+#: src/inscriptions/pointer.md:12
+msgid ""
+"An even tag is used, so that old versions of `ord` consider the inscription "
+"to be unbound, instead of assigning it, incorrectly, to the first sat."
+msgstr ""
+
+#: src/inscriptions/pointer.md:15
+msgid ""
+"This can be used to create multiple inscriptions in a single transaction on "
+"different sats, when otherwise they would be made on the same sat."
+msgstr ""
+
+#: src/inscriptions/pointer.md:18
+msgid "Examples"
+msgstr ""
+
+#: src/inscriptions/pointer.md:21
+msgid "An inscription with pointer 255:"
+msgstr ""
+
+#: src/inscriptions/pointer.md:23
+msgid ""
+"```\n"
+"OP_FALSE\n"
+"OP_IF\n"
+"  OP_PUSH \"ord\"\n"
+"  OP_PUSH 1\n"
+"  OP_PUSH \"text/plain;charset=utf-8\"\n"
+"  OP_PUSH 2\n"
+"  OP_PUSH 0xff\n"
+"  OP_PUSH 0\n"
+"  OP_PUSH \"Hello, world!\"\n"
+"OP_ENDIF\n"
+"```"
+msgstr ""
+
+#: src/inscriptions/pointer.md:36
+msgid "An inscription with pointer 256:"
+msgstr ""
+
+#: src/inscriptions/pointer.md:38
+msgid ""
+"```\n"
+"OP_FALSE\n"
+"OP_IF\n"
+"  OP_PUSH \"ord\"\n"
+"  OP_PUSH 1\n"
+"  OP_PUSH \"text/plain;charset=utf-8\"\n"
+"  OP_PUSH 2\n"
+"  OP_PUSH 0x0001\n"
+"  OP_PUSH 0\n"
+"  OP_PUSH \"Hello, world!\"\n"
+"OP_ENDIF\n"
+"```"
+msgstr ""
+
+#: src/inscriptions/pointer.md:51
+msgid "An inscription with pointer 256, with trailing zeroes, which are ignored:"
+msgstr ""
+
+#: src/inscriptions/pointer.md:53
+msgid ""
+"```\n"
+"OP_FALSE\n"
+"OP_IF\n"
+"  OP_PUSH \"ord\"\n"
+"  OP_PUSH 1\n"
+"  OP_PUSH \"text/plain;charset=utf-8\"\n"
+"  OP_PUSH 2\n"
+"  OP_PUSH 0x000100\n"
+"  OP_PUSH 0\n"
+"  OP_PUSH \"Hello, world!\"\n"
+"OP_ENDIF\n"
+"```"
+msgstr ""
+
 #: src/faq.md:1
 msgid "Ordinal Theory FAQ"
 msgstr ""
@@ -1311,34 +1553,34 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/faq.md:57
+#: src/faq.md:59
 msgid ""
 "Now let's label the same transaction with the ordinal numbers of the "
 "satoshis that each input contains, and question marks for each output slot. "
 "Ordinal numbers are large, so let's use letters to represent them:"
 msgstr ""
 
-#: src/faq.md:61
+#: src/faq.md:63
 msgid ""
 "```\n"
 "[a b] [c] [d e f] → [? ? ? ?] [? ?]\n"
 "```"
 msgstr ""
 
-#: src/faq.md:63
+#: src/faq.md:67
 msgid ""
 "To figure out which satoshi goes to which output, go through the input "
 "satoshis in order and assign each to a question mark:"
 msgstr ""
 
-#: src/faq.md:66
+#: src/faq.md:70
 msgid ""
 "```\n"
 "[a b] [c] [d e f] → [a b c d] [e f]\n"
 "```"
 msgstr ""
 
-#: src/faq.md:68
+#: src/faq.md:74
 msgid ""
 "What about fees, you might ask? Good question! Let's imagine the same "
 "transaction, this time with a two satoshi fee. Transactions with fees send "
@@ -1346,41 +1588,41 @@ msgid ""
 "transaction into one that pays fees, we'll remove the second output:"
 msgstr ""
 
-#: src/faq.md:73
+#: src/faq.md:79
 msgid ""
 "```\n"
 "[2] [1] [3] → [4]\n"
 "```"
 msgstr ""
 
-#: src/faq.md:75
+#: src/faq.md:83
 msgid "The satoshis "
 msgstr ""
 
-#: src/faq.md:75
+#: src/faq.md:83
 msgid "e"
 msgstr ""
 
-#: src/faq.md:75
+#: src/faq.md:83
 msgid " and "
 msgstr ""
 
-#: src/faq.md:75
+#: src/faq.md:83
 msgid "f"
 msgstr ""
 
-#: src/faq.md:75
+#: src/faq.md:83
 msgid " now have nowhere to go in the outputs:"
 msgstr ""
 
-#: src/faq.md:78
+#: src/faq.md:86
 msgid ""
 "```\n"
 "[a b] [c] [d e f] → [a b c d]\n"
 "```"
 msgstr ""
 
-#: src/faq.md:80
+#: src/faq.md:90
 msgid ""
 "So they go to the miner who mined the block as fees. [The "
 "BIP](https://github.com/ordinals/ord/blob/master/bip.mediawiki) has the "
@@ -1390,33 +1632,33 @@ msgid ""
 "might look like this:"
 msgstr ""
 
-#: src/faq.md:87
+#: src/faq.md:97
 msgid ""
 "```\n"
 "[SUBSIDY] [e f] → [SUBSIDY e f]\n"
 "```"
 msgstr ""
 
-#: src/faq.md:89
+#: src/faq.md:101
 msgid "Where can I find the nitty-gritty details?"
 msgstr ""
 
-#: src/faq.md:92
+#: src/faq.md:104
 msgid "[The BIP!](https://github.com/ordinals/ord/blob/master/bip.mediawiki)"
 msgstr ""
 
-#: src/faq.md:94
+#: src/faq.md:106
 msgid ""
 "Why are sat inscriptions called \"digital artifacts\" instead of \"NFTs\"?"
 msgstr ""
 
-#: src/faq.md:97
+#: src/faq.md:109
 msgid ""
 "An inscription is an NFT, but the term \"digital artifact\" is used instead, "
 "because it's simple, suggestive, and familiar."
 msgstr ""
 
-#: src/faq.md:100
+#: src/faq.md:112
 msgid ""
 "The phrase \"digital artifact\" is highly suggestive, even to someone who "
 "has never heard the term before. In comparison, NFT is an acronym, and "
@@ -1424,45 +1666,45 @@ msgid ""
 "term before."
 msgstr ""
 
-#: src/faq.md:104
+#: src/faq.md:116
 msgid ""
 "Additionally, \"NFT\" feels like financial terminology, and the both word "
 "\"fungible\" and sense of the word \"token\" as used in \"NFT\" is uncommon "
 "outside of financial contexts."
 msgstr ""
 
-#: src/faq.md:108
+#: src/faq.md:120
 msgid "How do sat inscriptions compare to…"
 msgstr ""
 
-#: src/faq.md:111
+#: src/faq.md:123
 msgid "Ethereum NFTs?"
 msgstr ""
 
-#: src/faq.md:113
+#: src/faq.md:125
 msgid "_Inscriptions are always immutable._"
 msgstr ""
 
-#: src/faq.md:115
+#: src/faq.md:127
 msgid ""
 "There is simply no way to for the creator of an inscription, or the owner of "
 "an inscription, to modify it after it has been created."
 msgstr ""
 
-#: src/faq.md:118
+#: src/faq.md:130
 msgid ""
 "Ethereum NFTs _can_ be immutable, but many are not, and can be changed or "
 "deleted by the NFT contract owner."
 msgstr ""
 
-#: src/faq.md:121
+#: src/faq.md:133
 msgid ""
 "In order to make sure that a particular Ethereum NFT is immutable, the "
 "contract code must be audited, which requires detailed knowledge of the EVM "
 "and Solidity semantics."
 msgstr ""
 
-#: src/faq.md:125
+#: src/faq.md:137
 msgid ""
 "It is very hard for a non-technical user to determine whether or not a given "
 "Ethereum NFT is mutable or immutable, and Ethereum NFT platforms make no "
@@ -1470,11 +1712,11 @@ msgid ""
 "the contract source code is available and has been audited."
 msgstr ""
 
-#: src/faq.md:130
+#: src/faq.md:142
 msgid "_Inscription content is always on-chain._"
 msgstr ""
 
-#: src/faq.md:132
+#: src/faq.md:144
 msgid ""
 "There is no way for an inscription to refer to off-chain content. This makes "
 "inscriptions more durable, because content cannot be lost, and scarcer, "
@@ -1482,7 +1724,7 @@ msgid ""
 "content."
 msgstr ""
 
-#: src/faq.md:136
+#: src/faq.md:148
 msgid ""
 "Some Ethereum NFT content is on-chain, but much is off-chain, and is stored "
 "on platforms like IPFS or Arweave, or on traditional, fully centralized web "
@@ -1493,35 +1735,35 @@ msgid ""
 "Centralized web servers may disappear at any time."
 msgstr ""
 
-#: src/faq.md:144
+#: src/faq.md:156
 msgid ""
 "It is very hard for a non-technical user to determine where the content of a "
 "given Ethereum NFT is stored."
 msgstr ""
 
-#: src/faq.md:147
+#: src/faq.md:159
 msgid "_Inscriptions are much simpler._"
 msgstr ""
 
-#: src/faq.md:149
+#: src/faq.md:161
 msgid ""
 "Ethereum NFTs depend on the Ethereum network and virtual machine, which are "
 "highly complex, constantly changing, and which introduce changes via "
 "backwards-incompatible hard forks."
 msgstr ""
 
-#: src/faq.md:153
+#: src/faq.md:165
 msgid ""
 "Inscriptions, on the other hand, depend on the Bitcoin blockchain, which is "
 "relatively simple and conservative, and which introduces changes via "
 "backwards-compatible soft forks."
 msgstr ""
 
-#: src/faq.md:157
+#: src/faq.md:169
 msgid "_Inscriptions are more secure._"
 msgstr ""
 
-#: src/faq.md:159
+#: src/faq.md:171
 msgid ""
 "Inscriptions inherit Bitcoin's transaction model, which allow a user to see "
 "exactly which inscriptions are being transferred by a transaction before "
@@ -1530,7 +1772,7 @@ msgid ""
 "exchange or marketplace, to transfer them on the user's behalf."
 msgstr ""
 
-#: src/faq.md:165
+#: src/faq.md:177
 msgid ""
 "By comparison, Ethereum NFTs are plagued with end-user security "
 "vulnerabilities. It is commonplace to blind-sign transactions, grant "
@@ -1540,29 +1782,29 @@ msgid ""
 "theorists."
 msgstr ""
 
-#: src/faq.md:171
+#: src/faq.md:183
 msgid "_Inscriptions are scarcer._"
 msgstr ""
 
-#: src/faq.md:173
+#: src/faq.md:185
 msgid ""
 "Inscriptions require bitcoin to mint, transfer, and store. This seems like a "
 "downside on the surface, but the raison d'etre of digital artifacts is to be "
 "scarce and thus valuable."
 msgstr ""
 
-#: src/faq.md:177
+#: src/faq.md:189
 msgid ""
 "Ethereum NFTs, on the other hand, can be minted in virtually unlimited "
 "qualities with a single transaction, making them inherently less scarce, and "
 "thus, potentially less valuable."
 msgstr ""
 
-#: src/faq.md:181
+#: src/faq.md:193
 msgid "_Inscriptions do not pretend to support on-chain royalties._"
 msgstr ""
 
-#: src/faq.md:183
+#: src/faq.md:195
 msgid ""
 "On-chain royalties are a good idea in theory but not in practice. Royalty "
 "payment cannot be enforced on-chain without complex and invasive "
@@ -1573,18 +1815,18 @@ msgid ""
 "remove royalty support."
 msgstr ""
 
-#: src/faq.md:190
+#: src/faq.md:202
 msgid ""
 "Inscriptions avoid this situation entirely by making no false promises of "
 "supporting royalties on-chain, thus avoiding the confusion, chaos, and "
 "negativity of the Ethereum NFT situation."
 msgstr ""
 
-#: src/faq.md:194
+#: src/faq.md:206
 msgid "_Inscriptions unlock new markets._"
 msgstr ""
 
-#: src/faq.md:196
+#: src/faq.md:208
 msgid ""
 "Bitcoin's market capitalization and liquidity are greater than Ethereum's by "
 "a large margin. Much of this liquidity is not available to Ethereum NFTs, "
@@ -1592,17 +1834,17 @@ msgid ""
 "to concerns related to simplicity, security, and decentralization."
 msgstr ""
 
-#: src/faq.md:201
+#: src/faq.md:213
 msgid ""
 "Such Bitcoiners may be more interested in inscriptions than Ethereum NFTs, "
 "unlocking new classes of collector."
 msgstr ""
 
-#: src/faq.md:204
+#: src/faq.md:216
 msgid "_Inscriptions have a richer data model._"
 msgstr ""
 
-#: src/faq.md:206
+#: src/faq.md:218
 msgid ""
 "Inscriptions consist of a content type, also known as a MIME type, and "
 "content, which is an arbitrary byte string. This is the same data model used "
@@ -1611,18 +1853,18 @@ msgid ""
 "changes to the underlying protocol."
 msgstr ""
 
-#: src/faq.md:212
+#: src/faq.md:224
 msgid "RGB and Taro assets?"
 msgstr ""
 
-#: src/faq.md:214
+#: src/faq.md:226
 msgid ""
 "RGB and Taro are both second-layer asset protocols built on Bitcoin. "
 "Compared to inscriptions, they are much more complicated, but much more "
 "featureful."
 msgstr ""
 
-#: src/faq.md:217
+#: src/faq.md:229
 msgid ""
 "Ordinal theory has been designed from the ground up for digital artifacts, "
 "whereas the primary use-case of RGB and Taro are fungible tokens, so the "
@@ -1630,14 +1872,14 @@ msgid ""
 "than the user experience for RGB and Taro NFTs."
 msgstr ""
 
-#: src/faq.md:222
+#: src/faq.md:234
 msgid ""
 "RGB and Taro both store content off-chain, which requires additional "
 "infrastructure, and which may be lost. By contrast, inscription content is "
 "stored on-chain, and cannot be lost."
 msgstr ""
 
-#: src/faq.md:226
+#: src/faq.md:238
 msgid ""
 "Ordinal theory, RGB, and Taro are all very early, so this is speculation, "
 "but ordinal theory's focus may give it the edge in terms of features for "
@@ -1645,32 +1887,32 @@ msgid ""
 "globally unique symbols."
 msgstr ""
 
-#: src/faq.md:231
+#: src/faq.md:243
 msgid "Counterparty assets?"
 msgstr ""
 
-#: src/faq.md:233
+#: src/faq.md:245
 msgid ""
 "Counterparty has its own token, XCP, which is required for some "
 "functionality, which makes most bitcoiners regard it as an altcoin, and not "
 "an extension or second layer for bitcoin."
 msgstr ""
 
-#: src/faq.md:237
+#: src/faq.md:249
 msgid ""
 "Ordinal theory has been designed from the ground up for digital artifacts, "
 "whereas Counterparty was primarily designed for financial token issuance."
 msgstr ""
 
-#: src/faq.md:240
+#: src/faq.md:252
 msgid "Inscriptions for…"
 msgstr ""
 
-#: src/faq.md:243
+#: src/faq.md:255
 msgid "Artists"
 msgstr ""
 
-#: src/faq.md:245
+#: src/faq.md:257
 msgid ""
 "_Inscriptions are on Bitcoin._ Bitcoin is the digital currency with the "
 "highest status and greatest chance of long-term survival. If you want to "
@@ -1678,40 +1920,40 @@ msgid ""
 "publish it than as inscriptions."
 msgstr ""
 
-#: src/faq.md:250
+#: src/faq.md:262
 msgid ""
 "_Cheaper on-chain storage._ At $20,000 per BTC and the minimum relay fee of "
 "1 satoshi per vbyte, publishing inscription content costs $50 per 1 million "
 "bytes."
 msgstr ""
 
-#: src/faq.md:254
+#: src/faq.md:266
 msgid ""
 "_Inscriptions are early!_ Inscriptions are still in development, and have "
 "not yet launched on mainnet. This gives you an opportunity to be an early "
 "adopter, and explore the medium as it evolves."
 msgstr ""
 
-#: src/faq.md:258
+#: src/faq.md:270
 msgid ""
 "_Inscriptions are simple._ Inscriptions do not require writing or "
 "understanding smart contracts."
 msgstr ""
 
-#: src/faq.md:261
+#: src/faq.md:273
 msgid ""
 "_Inscriptions unlock new liquidity._ Inscriptions are more accessible and "
 "appealing to bitcoin holders, unlocking an entirely new class of collector."
 msgstr ""
 
-#: src/faq.md:264
+#: src/faq.md:276
 msgid ""
 "_Inscriptions are designed for digital artifacts._ Inscriptions are designed "
 "from the ground up to support NFTs, and feature a better data model, and "
 "features like globally unique symbols and enhanced provenance."
 msgstr ""
 
-#: src/faq.md:268
+#: src/faq.md:280
 msgid ""
 "_Inscriptions do not support on-chain royalties._ This is negative, but only "
 "depending on how you look at it. On-chain royalties have been a boon for "
@@ -1725,27 +1967,27 @@ msgid ""
 "who respect optional royalties."
 msgstr ""
 
-#: src/faq.md:279
+#: src/faq.md:291
 msgid "Collectors"
 msgstr ""
 
-#: src/faq.md:281
+#: src/faq.md:293
 msgid ""
 "_Inscriptions are simple, clear, and have no surprises._ They are always "
 "immutable and on-chain, with no special due diligence required."
 msgstr ""
 
-#: src/faq.md:284
+#: src/faq.md:296
 msgid ""
 "_Inscriptions are on Bitcoin._ You can verify the location and properties of "
 "inscriptions easily with Bitcoin full node that you control."
 msgstr ""
 
-#: src/faq.md:287
+#: src/faq.md:299
 msgid "Bitcoiners"
 msgstr ""
 
-#: src/faq.md:289
+#: src/faq.md:301
 msgid ""
 "Let me begin this section by saying: the most important thing that the "
 "Bitcoin network does is decentralize money. All other use-cases are "
@@ -1754,7 +1996,7 @@ msgid ""
 "least in a small way, Bitcoin's primary mission."
 msgstr ""
 
-#: src/faq.md:295
+#: src/faq.md:307
 msgid ""
 "Unlike many other things in the altcoin space, digital artifacts have merit. "
 "There are, of course, a great deal of NFTs that are ugly, stupid, and "
@@ -1764,7 +2006,7 @@ msgid ""
 "technologies."
 msgstr ""
 
-#: src/faq.md:302
+#: src/faq.md:314
 msgid ""
 "Bitcoin provides an amazing platform for creating and collecting digital "
 "artifacts in a secure, decentralized way, that protects users and artists in "
@@ -1772,7 +2014,7 @@ msgid ""
 "value, and for all the same reasons."
 msgstr ""
 
-#: src/faq.md:307
+#: src/faq.md:319
 msgid ""
 "Ordinals and inscriptions increase demand for Bitcoin block space, which "
 "increase Bitcoin's security budget, which is vital for safeguarding "
@@ -1780,7 +2022,7 @@ msgid ""
 "is halved into insignificance."
 msgstr ""
 
-#: src/faq.md:312
+#: src/faq.md:324
 msgid ""
 "Inscription content is stored on-chain, and thus the demand for block space "
 "for use in inscriptions is unlimited. This creates a buyer of last resort "
@@ -1788,7 +2030,7 @@ msgid ""
 "which ensures that Bitcoin remains secure."
 msgstr ""
 
-#: src/faq.md:317
+#: src/faq.md:329
 msgid ""
 "Inscriptions also counter the narrative that Bitcoin cannot be extended or "
 "used for new use-cases. If you follow projects like DLCs, Fedimint, "
@@ -1798,7 +2040,7 @@ msgid ""
 "legible."
 msgstr ""
 
-#: src/faq.md:323
+#: src/faq.md:335
 msgid ""
 "If inscriptions prove, as the authors hope, to be highly sought after "
 "digital artifacts with a rich history, they will serve as a powerful hook "
@@ -1806,7 +2048,7 @@ msgid ""
 "digital money."
 msgstr ""
 
-#: src/faq.md:327
+#: src/faq.md:339
 msgid ""
 "Inscriptions are an extremely benign source of demand for block space. "
 "Unlike, for example, stablecoins, which potentially give large stablecoin "
@@ -1816,20 +2058,20 @@ msgid ""
 "with enough power to corrupt Bitcoin. Art is decentralized."
 msgstr ""
 
-#: src/faq.md:334
+#: src/faq.md:346
 msgid ""
 "Inscription users and service providers are incentivized to run Bitcoin full "
 "nodes, to publish and track inscriptions, and thus throw their economic "
 "weight behind the honest chain."
 msgstr ""
 
-#: src/faq.md:338
+#: src/faq.md:350
 msgid ""
 "Ordinal theory and inscriptions do not meaningfully affect Bitcoin's "
 "fungibility. Bitcoin users can ignore both and be unaffected."
 msgstr ""
 
-#: src/faq.md:341
+#: src/faq.md:353
 msgid ""
 "We hope that ordinal theory strengthens and enriches bitcoin, and gives it "
 "another dimension of appeal and functionality, enabling it more effectively "
@@ -2074,121 +2316,214 @@ msgstr ""
 
 #: src/guides/explorer.md:17
 msgid ""
-"To enable the JSON-API endpoints add the `--enable-json-api` or `-e` flag:"
+"To enable the JSON-API endpoints add the `--enable-json-api` or `-j` flag "
+"(see [here](#json-api) for more info):"
 msgstr ""
 
-#: src/guides/explorer.md:19
+#: src/guides/explorer.md:20
 msgid "`ord --enable-json-api server`"
 msgstr ""
 
-#: src/guides/explorer.md:21
+#: src/guides/explorer.md:22
 msgid "To test how your inscriptions will look you can run:"
 msgstr ""
 
-#: src/guides/explorer.md:23
+#: src/guides/explorer.md:24
 msgid "`ord preview <FILE1> <FILE2> ...`"
 msgstr ""
 
-#: src/guides/explorer.md:25
+#: src/guides/explorer.md:26
 msgid "Search"
 msgstr ""
 
-#: src/guides/explorer.md:28
+#: src/guides/explorer.md:29
 msgid "The search box accepts a variety of object representations."
 msgstr ""
 
-#: src/guides/explorer.md:30
+#: src/guides/explorer.md:31
 msgid "Blocks"
 msgstr ""
 
-#: src/guides/explorer.md:32
+#: src/guides/explorer.md:33
 msgid "Blocks can be searched by hash, for example, the genesis block:"
 msgstr ""
 
-#: src/guides/explorer.md:34
+#: src/guides/explorer.md:35
 msgid ""
 "[000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f](https://ordinals.com/search/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f)"
 msgstr ""
 
-#: src/guides/explorer.md:36
+#: src/guides/explorer.md:37
 msgid "Transactions"
 msgstr ""
 
-#: src/guides/explorer.md:38
+#: src/guides/explorer.md:39
 msgid ""
 "Transactions can be searched by hash, for example, the genesis block "
 "coinbase transaction:"
 msgstr ""
 
-#: src/guides/explorer.md:41
+#: src/guides/explorer.md:42
 msgid ""
 "[4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b](https://ordinals.com/search/4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b)"
 msgstr ""
 
-#: src/guides/explorer.md:43
+#: src/guides/explorer.md:44
 msgid "Outputs"
 msgstr ""
 
-#: src/guides/explorer.md:45
+#: src/guides/explorer.md:46
 msgid ""
 "Transaction outputs can searched by outpoint, for example, the only output "
 "of the genesis block coinbase transaction:"
 msgstr ""
 
-#: src/guides/explorer.md:48
+#: src/guides/explorer.md:49
 msgid ""
 "[4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b:0](https://ordinals.com/search/4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b:0)"
 msgstr ""
 
-#: src/guides/explorer.md:50
+#: src/guides/explorer.md:51
 msgid "Sats"
 msgstr ""
 
-#: src/guides/explorer.md:52
+#: src/guides/explorer.md:53
 msgid ""
 "Sats can be searched by integer, their position within the entire bitcoin "
 "supply:"
 msgstr ""
 
-#: src/guides/explorer.md:55
+#: src/guides/explorer.md:56
 msgid "[2099994106992659](https://ordinals.com/search/2099994106992659)"
 msgstr ""
 
-#: src/guides/explorer.md:57
+#: src/guides/explorer.md:58
 msgid "By decimal, their block and offset within that block:"
 msgstr ""
 
-#: src/guides/explorer.md:59
+#: src/guides/explorer.md:60
 msgid "[481824.0](https://ordinals.com/search/481824.0)"
 msgstr ""
 
-#: src/guides/explorer.md:61
+#: src/guides/explorer.md:62
 msgid ""
 "By degree, their cycle, blocks since the last halving, blocks since the last "
 "difficulty adjustment, and offset within their block:"
 msgstr ""
 
-#: src/guides/explorer.md:64
+#: src/guides/explorer.md:65
 msgid "[1°0′0″0‴](https://ordinals.com/search/1°0′0″0‴)"
 msgstr ""
 
-#: src/guides/explorer.md:66
+#: src/guides/explorer.md:67
 msgid ""
 "By name, their base 26 representation using the letters \"a\" through \"z\":"
 msgstr ""
 
-#: src/guides/explorer.md:68
+#: src/guides/explorer.md:69
 msgid "[ahistorical](https://ordinals.com/search/ahistorical)"
 msgstr ""
 
-#: src/guides/explorer.md:70
+#: src/guides/explorer.md:71
 msgid ""
 "Or by percentile, the percentage of bitcoin's supply that has been or will "
 "have been issued when they are mined:"
 msgstr ""
 
-#: src/guides/explorer.md:73
+#: src/guides/explorer.md:74
 msgid "[100%](https://ordinals.com/search/100%)"
+msgstr ""
+
+#: src/guides/explorer.md:76
+msgid "JSON-API"
+msgstr ""
+
+#: src/guides/explorer.md:79
+msgid ""
+"You can run `ord` with the `--enable-json-api` flag to access endpoints that "
+"return JSON instead of HTML if you set the HTTP `Accept: application/json` "
+"header. The structure of theses objects closely follows what is shown in the "
+"HTML. These endpoints are:"
+msgstr ""
+
+#: src/guides/explorer.md:84
+msgid "`/inscription/<INSCRIPTION_ID>`"
+msgstr ""
+
+#: src/guides/explorer.md:85
+msgid "`/inscriptions`"
+msgstr ""
+
+#: src/guides/explorer.md:86
+msgid "`/inscriptions/block/<BLOCK_HEIGHT>`"
+msgstr ""
+
+#: src/guides/explorer.md:87
+msgid "`/inscriptions/block/<BLOCK_HEIGHT>/<PAGE_INDEX>`"
+msgstr ""
+
+#: src/guides/explorer.md:88
+msgid "`/inscriptions/<FROM>`"
+msgstr ""
+
+#: src/guides/explorer.md:89
+msgid "`/inscriptions/<FROM>/<N>`"
+msgstr ""
+
+#: src/guides/explorer.md:90
+#: src/guides/explorer.md:91
+msgid "`/output/<OUTPOINT>`"
+msgstr ""
+
+#: src/guides/explorer.md:92
+msgid "`/sat/<SAT>`"
+msgstr ""
+
+#: src/guides/explorer.md:94
+msgid "To get a list of the latest 100 inscriptions you would do:"
+msgstr ""
+
+#: src/guides/explorer.md:96
+msgid ""
+"```\n"
+"curl -s -H \"Accept: application/json\" 'http://0.0.0.0:80/inscriptions'\n"
+"```"
+msgstr ""
+
+#: src/guides/explorer.md:100
+msgid ""
+"To see information about a UTXO, which includes inscriptions inside it, do:"
+msgstr ""
+
+#: src/guides/explorer.md:102
+msgid ""
+"```\n"
+"curl -s -H \"Accept: application/json\" "
+"'http://0.0.0.0:80/output/bc4c30829a9564c0d58e6287195622b53ced54a25711d1b86be7cd3a70ef61ed:0'\n"
+"```"
+msgstr ""
+
+#: src/guides/explorer.md:106
+msgid "Which returns:"
+msgstr ""
+
+#: src/guides/explorer.md:108
+msgid ""
+"```\n"
+"{\n"
+"  \"value\": 10000,\n"
+"  \"script_pubkey\": \"OP_PUSHNUM_1 OP_PUSHBYTES_32 "
+"156cc4878306157720607cdcb4b32afa4cc6853868458d7258b907112e5a434b\",\n"
+"  \"address\": "
+"\"bc1pz4kvfpurqc2hwgrq0nwtfve2lfxvdpfcdpzc6ujchyr3ztj6gd9sfr6ayf\",\n"
+"  \"transaction\": "
+"\"bc4c30829a9564c0d58e6287195622b53ced54a25711d1b86be7cd3a70ef61ed\",\n"
+"  \"sat_ranges\": null,\n"
+"  \"inscriptions\": [\n"
+"    \"6fb976ab49dcec017f1e201e84395983204ae1a7c2abf7ced0a85d692e442799i0\"\n"
+"  ]\n"
+"}\n"
+"```"
 msgstr ""
 
 #: src/guides/inscriptions.md:1
@@ -2230,7 +2565,7 @@ msgid "This guide covers:"
 msgstr ""
 
 #: src/guides/inscriptions.md:23
-#: src/guides/inscriptions.md:39
+#: src/guides/inscriptions.md:40
 msgid "Installing Bitcoin Core"
 msgstr ""
 
@@ -2258,11 +2593,15 @@ msgstr ""
 msgid "Receiving inscriptions with `ord wallet receive`"
 msgstr ""
 
-#: src/guides/inscriptions.md:31
+#: src/guides/inscriptions.md:30
+msgid "Batch inscribing with `ord wallet inscribe --batch`"
+msgstr ""
+
+#: src/guides/inscriptions.md:32
 msgid "Getting Help"
 msgstr ""
 
-#: src/guides/inscriptions.md:34
+#: src/guides/inscriptions.md:35
 msgid ""
 "If you get stuck, try asking for help on the [Ordinals Discord "
 "Server](https://discord.com/invite/87cjuz4FYg), or checking GitHub for "
@@ -2270,38 +2609,38 @@ msgid ""
 "[discussions](https://github.com/ordinals/ord/discussions)."
 msgstr ""
 
-#: src/guides/inscriptions.md:42
+#: src/guides/inscriptions.md:43
 msgid ""
 "Bitcoin Core is available from [bitcoincore.org](https://bitcoincore.org/) "
 "on the [download page](https://bitcoincore.org/en/download/)."
 msgstr ""
 
-#: src/guides/inscriptions.md:45
+#: src/guides/inscriptions.md:46
 msgid "Making inscriptions requires Bitcoin Core 24 or newer."
 msgstr ""
 
-#: src/guides/inscriptions.md:47
+#: src/guides/inscriptions.md:48
 msgid ""
 "This guide does not cover installing Bitcoin Core in detail. Once Bitcoin "
 "Core is installed, you should be able to run `bitcoind -version` "
-"successfully from the command line."
+"successfully from the command line. Do _NOT_ use `bitcoin-qt`."
 msgstr ""
 
-#: src/guides/inscriptions.md:51
+#: src/guides/inscriptions.md:52
 msgid "Configuring Bitcoin Core"
 msgstr ""
 
-#: src/guides/inscriptions.md:54
-msgid "`ord` requires Bitcoin Core's transaction index."
+#: src/guides/inscriptions.md:55
+msgid "`ord` requires Bitcoin Core's transaction index and rest interface."
 msgstr ""
 
-#: src/guides/inscriptions.md:56
+#: src/guides/inscriptions.md:57
 msgid ""
 "To configure your Bitcoin Core node to maintain a transaction index, add the "
 "following to your `bitcoin.conf`:"
 msgstr ""
 
-#: src/guides/inscriptions.md:59
+#: src/guides/inscriptions.md:60
 #: src/guides/sat-hunting.md:30
 msgid ""
 "```\n"
@@ -2309,38 +2648,44 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:63
+#: src/guides/inscriptions.md:64
 msgid "Or, run `bitcoind` with `-txindex`:"
 msgstr ""
 
-#: src/guides/inscriptions.md:65
-#: src/guides/inscriptions.md:74
+#: src/guides/inscriptions.md:66
+#: src/guides/inscriptions.md:78
 msgid ""
 "```\n"
 "bitcoind -txindex\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:69
+#: src/guides/inscriptions.md:70
+msgid ""
+"Details on creating or modifying your `bitcoin.conf` file can be found "
+"[here](https://github.com/bitcoin/bitcoin/blob/master/doc/bitcoin-conf.md)."
+msgstr ""
+
+#: src/guides/inscriptions.md:73
 msgid "Syncing the Bitcoin Blockchain"
 msgstr ""
 
-#: src/guides/inscriptions.md:72
+#: src/guides/inscriptions.md:76
 msgid "To sync the chain, run:"
 msgstr ""
 
-#: src/guides/inscriptions.md:78
+#: src/guides/inscriptions.md:82
 msgid "…and leave it running until `getblockcount`:"
 msgstr ""
 
-#: src/guides/inscriptions.md:80
+#: src/guides/inscriptions.md:84
 msgid ""
 "```\n"
 "bitcoin-cli getblockcount\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:84
+#: src/guides/inscriptions.md:88
 msgid ""
 "agrees with the block count on a block explorer like [the mempool.space "
 "block explorer](https://mempool.space/). `ord` interacts with `bitcoind`, so "
@@ -2348,22 +2693,104 @@ msgid ""
 "`ord`."
 msgstr ""
 
-#: src/guides/inscriptions.md:88
+#: src/guides/inscriptions.md:92
+msgid ""
+"The blockchain takes about 600GB of disk space. If you have an external "
+"drive you want to store blocks on, use the configuration option "
+"`blocksdir=<external_drive_path>`. This is much simpler than using the "
+"`datadir` option because the cookie file will still be in the default "
+"location for `bitcoin-cli` and `ord` to find."
+msgstr ""
+
+#: src/guides/inscriptions.md:98
+#: src/guides/collecting/sparrow-wallet.md:173
+msgid "Troubleshooting"
+msgstr ""
+
+#: src/guides/inscriptions.md:101
+msgid ""
+"Make sure you can access `bitcoind` with `bitcoin-cli -getinfo` and that it "
+"is fully synced."
+msgstr ""
+
+#: src/guides/inscriptions.md:104
+msgid ""
+"If `bitcoin-cli -getinfo` returns `Could not connect to the server`, "
+"`bitcoind` is not running."
+msgstr ""
+
+#: src/guides/inscriptions.md:107
+msgid ""
+"Make sure `rpcuser`, `rpcpassword`, or `rpcauth` are _NOT_ set in your "
+"`bitcoin.conf` file. `ord` requires using cookie authentication. Make sure "
+"there is a file `.cookie` in your bitcoin data directory."
+msgstr ""
+
+#: src/guides/inscriptions.md:111
+msgid ""
+"If `bitcoin-cli -getinfo` returns `Could not locate RPC credentials`, then "
+"you must specify the cookie file location. If you are using a custom data "
+"directory (specifying the `datadir` option), then you must specify the "
+"cookie location like `bitcoin-cli "
+"-rpccookiefile=<your_bitcoin_datadir>/.cookie -getinfo`. When running `ord` "
+"you must specify the cookie file location with "
+"`--cookie-file=<your_bitcoin_datadir>/.cookie`."
+msgstr ""
+
+#: src/guides/inscriptions.md:119
+msgid ""
+"Make sure you do _NOT_ have `disablewallet=1` in your `bitcoin.conf` file. "
+"If `bitcoin-cli listwallets` returns `Method not found` then the wallet is "
+"disabled and you won't be able to use `ord`."
+msgstr ""
+
+#: src/guides/inscriptions.md:123
+msgid ""
+"Make sure `txindex=1` is set. Run `bitcoin-cli getindexinfo` and it should "
+"return something like"
+msgstr ""
+
+#: src/guides/inscriptions.md:125
+msgid ""
+"```json\n"
+"{\n"
+"  \"txindex\": {\n"
+"    \"synced\": true,\n"
+"    \"best_block_height\": 776546\n"
+"  }\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/guides/inscriptions.md:133
+msgid ""
+"If it only returns `{}`, `txindex` is not set. If it returns `\"synced\": "
+"false`, `bitcoind` is still creating the `txindex`. Wait until `\"synced\": "
+"true` before using `ord`."
+msgstr ""
+
+#: src/guides/inscriptions.md:137
+msgid ""
+"If you have `maxuploadtarget` set it can interfere with fetching blocks for "
+"`ord` index. Either remove it or set `whitebind=127.0.0.1:8333`."
+msgstr ""
+
+#: src/guides/inscriptions.md:140
 msgid "Installing `ord`"
 msgstr ""
 
-#: src/guides/inscriptions.md:91
+#: src/guides/inscriptions.md:143
 msgid ""
 "The `ord` utility is written in Rust and can be built from "
 "[source](https://github.com/ordinals/ord). Pre-built binaries are available "
 "on the [releases page](https://github.com/ordinals/ord/releases)."
 msgstr ""
 
-#: src/guides/inscriptions.md:95
+#: src/guides/inscriptions.md:147
 msgid "You can install the latest pre-built binary from the command line with:"
 msgstr ""
 
-#: src/guides/inscriptions.md:97
+#: src/guides/inscriptions.md:149
 msgid ""
 "```sh\n"
 "curl --proto '=https' --tlsv1.2 -fsLS https://ordinals.com/install.sh | bash "
@@ -2371,105 +2798,105 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:101
+#: src/guides/inscriptions.md:153
 msgid "Once `ord` is installed, you should be able to run:"
 msgstr ""
 
-#: src/guides/inscriptions.md:103
+#: src/guides/inscriptions.md:155
 msgid ""
 "```\n"
 "ord --version\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:107
+#: src/guides/inscriptions.md:159
 msgid "Which prints out `ord`'s version number."
 msgstr ""
 
-#: src/guides/inscriptions.md:109
+#: src/guides/inscriptions.md:161
 msgid "Creating a Bitcoin Core Wallet"
 msgstr ""
 
-#: src/guides/inscriptions.md:112
+#: src/guides/inscriptions.md:164
 msgid ""
 "`ord` uses Bitcoin Core to manage private keys, sign transactions, and "
 "broadcast transactions to the Bitcoin network."
 msgstr ""
 
-#: src/guides/inscriptions.md:115
+#: src/guides/inscriptions.md:167
 msgid "To create a Bitcoin Core wallet named `ord` for use with `ord`, run:"
 msgstr ""
 
-#: src/guides/inscriptions.md:117
+#: src/guides/inscriptions.md:169
 msgid ""
 "```\n"
 "ord wallet create\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:121
+#: src/guides/inscriptions.md:173
 msgid "Receiving Sats"
 msgstr ""
 
-#: src/guides/inscriptions.md:124
+#: src/guides/inscriptions.md:176
 msgid ""
 "Inscriptions are made on individual sats, using normal Bitcoin transactions "
 "that pay fees in sats, so your wallet will need some sats."
 msgstr ""
 
-#: src/guides/inscriptions.md:127
+#: src/guides/inscriptions.md:179
 msgid "Get a new address from your `ord` wallet by running:"
 msgstr ""
 
-#: src/guides/inscriptions.md:129
-#: src/guides/inscriptions.md:212
-#: src/guides/inscriptions.md:240
+#: src/guides/inscriptions.md:181
+#: src/guides/inscriptions.md:269
+#: src/guides/inscriptions.md:297
 msgid ""
 "```\n"
 "ord wallet receive\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:133
+#: src/guides/inscriptions.md:185
 msgid "And send it some funds."
 msgstr ""
 
-#: src/guides/inscriptions.md:135
+#: src/guides/inscriptions.md:187
 msgid "You can see pending transactions with:"
 msgstr ""
 
-#: src/guides/inscriptions.md:137
-#: src/guides/inscriptions.md:224
-#: src/guides/inscriptions.md:251
+#: src/guides/inscriptions.md:189
+#: src/guides/inscriptions.md:281
+#: src/guides/inscriptions.md:308
 msgid ""
 "```\n"
 "ord wallet transactions\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:141
+#: src/guides/inscriptions.md:193
 msgid ""
 "Once the transaction confirms, you should be able to see the transactions "
 "outputs with `ord wallet outputs`."
 msgstr ""
 
-#: src/guides/inscriptions.md:144
+#: src/guides/inscriptions.md:196
 msgid "Creating Inscription Content"
 msgstr ""
 
-#: src/guides/inscriptions.md:147
+#: src/guides/inscriptions.md:199
 msgid ""
 "Sats can be inscribed with any kind of content, but the `ord` wallet only "
 "supports content types that can be displayed by the `ord` block explorer."
 msgstr ""
 
-#: src/guides/inscriptions.md:150
+#: src/guides/inscriptions.md:202
 msgid ""
 "Additionally, inscriptions are included in transactions, so the larger the "
 "content, the higher the fee that the inscription transaction must pay."
 msgstr ""
 
-#: src/guides/inscriptions.md:153
+#: src/guides/inscriptions.md:205
 msgid ""
 "Inscription content is included in transaction witnesses, which receive the "
 "witness discount. To calculate the approximate fee that an inscribe "
@@ -2477,7 +2904,7 @@ msgid ""
 "fee rate."
 msgstr ""
 
-#: src/guides/inscriptions.md:157
+#: src/guides/inscriptions.md:209
 msgid ""
 "Inscription transactions must be less than 400,000 weight units, or they "
 "will not be relayed by Bitcoin Core. One byte of inscription content costs "
@@ -2486,22 +2913,22 @@ msgid ""
 "units. 390,000 weight units should be safe."
 msgstr ""
 
-#: src/guides/inscriptions.md:163
+#: src/guides/inscriptions.md:215
 msgid "Creating Inscriptions"
 msgstr ""
 
-#: src/guides/inscriptions.md:166
+#: src/guides/inscriptions.md:218
 msgid "To create an inscription with the contents of `FILE`, run:"
 msgstr ""
 
-#: src/guides/inscriptions.md:168
+#: src/guides/inscriptions.md:220
 msgid ""
 "```\n"
 "ord wallet inscribe --fee-rate FEE_RATE FILE\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:172
+#: src/guides/inscriptions.md:224
 msgid ""
 "Ord will output two transactions IDs, one for the commit transaction, and "
 "one for the reveal transaction, and the inscription ID. Inscription IDs are "
@@ -2510,7 +2937,7 @@ msgid ""
 "transaction."
 msgstr ""
 
-#: src/guides/inscriptions.md:177
+#: src/guides/inscriptions.md:229
 msgid ""
 "The commit transaction commits to a tapscript containing the content of the "
 "inscription, and the reveal transaction spends from that tapscript, "
@@ -2518,111 +2945,187 @@ msgid ""
 "input that contains the corresponding tapscript."
 msgstr ""
 
-#: src/guides/inscriptions.md:182
+#: src/guides/inscriptions.md:234
 msgid ""
 "Wait for the reveal transaction to be mined. You can check the status of the "
 "commit and reveal transactions using  [the mempool.space block "
 "explorer](https://mempool.space/)."
 msgstr ""
 
-#: src/guides/inscriptions.md:186
+#: src/guides/inscriptions.md:238
 msgid ""
 "Once the reveal transaction has been mined, the inscription ID should be "
 "printed when you run:"
 msgstr ""
 
-#: src/guides/inscriptions.md:189
-#: src/guides/inscriptions.md:231
-#: src/guides/inscriptions.md:257
+#: src/guides/inscriptions.md:241
+#: src/guides/inscriptions.md:288
+#: src/guides/inscriptions.md:314
 msgid ""
 "```\n"
 "ord wallet inscriptions\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:193
-msgid "Parent Child Inscriptions"
+#: src/guides/inscriptions.md:245
+msgid "Parent-Child Inscriptions"
 msgstr ""
 
-#: src/guides/inscriptions.md:196
+#: src/guides/inscriptions.md:248
 msgid ""
-"A child inscription is an inscription that is a child of another "
-"inscription. See [provenance](../inscriptions/provenance.md) for more "
-"information."
+"Parent-child inscriptions enable what is colloquially known as collections, "
+"see [provenance](../inscriptions/provenance.md) for more information."
 msgstr ""
 
-#: src/guides/inscriptions.md:198
+#: src/guides/inscriptions.md:251
 msgid ""
-"get the parent inscription id `<PARENT_INSCRIPTION_ID>` from the output of "
-"`ord wallet inscriptions`"
+"To make an inscription a child of another, the parent inscription has to be "
+"inscribed and present in the wallet. To choose a parent run `ord wallet "
+"inscriptions` and copy the inscription id (`<PARENT_INSCRIPTION_ID>`)."
 msgstr ""
 
-#: src/guides/inscriptions.md:200
+#: src/guides/inscriptions.md:255
+msgid "Now inscribe the child inscription and specify the parent like so:"
+msgstr ""
+
+#: src/guides/inscriptions.md:257
 msgid ""
 "```\n"
 "ord wallet inscribe --fee-rate FEE_RATE --parent <PARENT_INSCRIPTION_ID> "
-"CHILD_FILE\"\n"
+"CHILD_FILE\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:204
+#: src/guides/inscriptions.md:261
 msgid ""
-"And when you visit [the ordinals explorer](https://ordinals.com/) at "
-"`ordinals.com/inscription/INSCRIPTION_ID`."
+"This relationship cannot be added retroactively, the parent has to be "
+"present at inception of the child."
 msgstr ""
 
-#: src/guides/inscriptions.md:207
+#: src/guides/inscriptions.md:264
 msgid "Sending Inscriptions"
 msgstr ""
 
-#: src/guides/inscriptions.md:210
+#: src/guides/inscriptions.md:267
 msgid "Ask the recipient to generate a new address by running:"
 msgstr ""
 
-#: src/guides/inscriptions.md:216
+#: src/guides/inscriptions.md:273
 msgid "Send the inscription by running:"
 msgstr ""
 
-#: src/guides/inscriptions.md:218
+#: src/guides/inscriptions.md:275
 msgid ""
 "```\n"
 "ord wallet send --fee-rate <FEE_RATE> <ADDRESS> <INSCRIPTION_ID>\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:222
-#: src/guides/inscriptions.md:250
+#: src/guides/inscriptions.md:279
+#: src/guides/inscriptions.md:307
 msgid "See the pending transaction with:"
 msgstr ""
 
-#: src/guides/inscriptions.md:228
+#: src/guides/inscriptions.md:285
 msgid ""
 "Once the send transaction confirms, the recipient can confirm receipt by "
 "running:"
 msgstr ""
 
-#: src/guides/inscriptions.md:235
+#: src/guides/inscriptions.md:292
 msgid "Receiving Inscriptions"
 msgstr ""
 
-#: src/guides/inscriptions.md:238
+#: src/guides/inscriptions.md:295
 msgid "Generate a new receive address using:"
 msgstr ""
 
-#: src/guides/inscriptions.md:244
+#: src/guides/inscriptions.md:301
 msgid "The sender can transfer the inscription to your address using:"
 msgstr ""
 
-#: src/guides/inscriptions.md:246
+#: src/guides/inscriptions.md:303
 msgid ""
 "```\n"
 "ord wallet send ADDRESS INSCRIPTION_ID\n"
 "```"
 msgstr ""
 
-#: src/guides/inscriptions.md:255
+#: src/guides/inscriptions.md:312
 msgid ""
 "Once the send transaction confirms, you can can confirm receipt by running:"
+msgstr ""
+
+#: src/guides/batch-inscribing.md:4
+msgid ""
+"Multiple inscriptions can be created inscriptions at the same time using the "
+"[pointer field](./../inscriptions/pointer.md). This is especially helpful "
+"for collections, or other cases when multiple inscriptions should share the "
+"same parent, since the parent can passed into a reveal transaction that "
+"creates multiple children."
+msgstr ""
+
+#: src/guides/batch-inscribing.md:10
+msgid ""
+"To create a batch inscription using a batchfile in `batch.yaml`, run the "
+"following command:"
+msgstr ""
+
+#: src/guides/batch-inscribing.md:13
+msgid ""
+"```bash\n"
+"ord wallet inscribe --fee-rate 21 --batch batch.yaml\n"
+"```"
+msgstr ""
+
+#: src/guides/batch-inscribing.md:17
+msgid "Example `batch.yaml`"
+msgstr ""
+
+#: src/guides/batch-inscribing.md:20
+msgid ""
+"```yaml\n"
+"# example batch file\n"
+"\n"
+"# there are two modes:\n"
+"# - `separate-outputs`: place all inscriptions in separate postage-sized "
+"outputs\n"
+"# - `shared-output`: place inscriptions in a single output separated by "
+"postage\n"
+"mode: separate-outputs\n"
+"\n"
+"# parent inscription:\n"
+"parent: 6ac5cacb768794f4fd7a78bf00f2074891fce68bd65c4ff36e77177237aacacai0\n"
+"\n"
+"# inscriptions to inscribe\n"
+"#\n"
+"# each inscription has the following fields:\n"
+"#\n"
+"# `inscription`: path to inscription contents\n"
+"# `metadata`: inscription metadata (optional)\n"
+"# `metaprotocol`: inscription metaprotocol (optional)\n"
+"inscriptions:\n"
+"  - file: mango.avif\n"
+"    metadata:\n"
+"      title: Delicious Mangos\n"
+"      description: >\n"
+"        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam "
+"semper,\n"
+"        ligula ornare laoreet tincidunt, odio nisi euismod tortor, vel "
+"blandit\n"
+"        metus est et odio. Nullam venenatis, urna et molestie vestibulum, "
+"orci\n"
+"        mi efficitur risus, eu malesuada diam lorem sed velit. Nam "
+"fermentum\n"
+"        dolor et luctus euismod.\n"
+"\n"
+"  - file: token.json\n"
+"    metaprotocol: brc-20\n"
+"\n"
+"  - file: tulip.png\n"
+"    metadata:\n"
+"      author: Satoshi Nakamoto\n"
+"```"
 msgstr ""
 
 #: src/guides/sat-hunting.md:4
@@ -3023,6 +3526,85 @@ msgid ""
 "`bitcoin-cli` commands `createrawtransaction`, "
 "`signrawtransactionwithwallet`, and `sendrawtransaction`, how to do so is "
 "complex and outside the scope of this guide."
+msgstr ""
+
+#: src/guides/teleburning.md:4
+msgid ""
+"Teleburn addresses can be used to burn assets on other blockchains, leaving "
+"behind in the smoking rubble a sort of forwarding address pointing to an "
+"inscription on Bitcoin."
+msgstr ""
+
+#: src/guides/teleburning.md:8
+msgid ""
+"Teleburning an asset means something like, \"I'm out. Find me on Bitcoin.\""
+msgstr ""
+
+#: src/guides/teleburning.md:10
+msgid ""
+"Teleburn addresses are derived from inscription IDs. They have no "
+"corresponding private key, so assets sent to a teleburn address are burned. "
+"Currently, only Ethereum teleburn addresses are suppported. Pull requests "
+"adding teleburn addresses for other chains are welcome."
+msgstr ""
+
+#: src/guides/teleburning.md:15
+msgid "Ethereum"
+msgstr ""
+
+#: src/guides/teleburning.md:18
+msgid ""
+"Ethereum teleburn addresses are derived by taking the first 20 bytes of the "
+"SHA-256 hash of the inscription ID, serialized as 36 bytes, with the first "
+"32 bytes containing the transaction ID, and the last four bytes containing "
+"big-endian inscription index, and interpreting it as an Ethereum address."
+msgstr ""
+
+#: src/guides/teleburning.md:26
+msgid ""
+"The ENS domain name [rodarmor.eth](https://app.ens.domains/rodarmor.eth), "
+"was teleburned to [inscription "
+"zero](https://ordinals.com/inscription/6fb976ab49dcec017f1e201e84395983204ae1a7c2abf7ced0a85d692e442799i0)."
+msgstr ""
+
+#: src/guides/teleburning.md:30
+msgid ""
+"Running the inscription ID of inscription zero is "
+"`6fb976ab49dcec017f1e201e84395983204ae1a7c2abf7ced0a85d692e442799i0`."
+msgstr ""
+
+#: src/guides/teleburning.md:33
+msgid ""
+"Passing `6fb976ab49dcec017f1e201e84395983204ae1a7c2abf7ced0a85d692e442799i0` "
+"to the teleburn command:"
+msgstr ""
+
+#: src/guides/teleburning.md:36
+msgid ""
+"```bash\n"
+"$ ord teleburn "
+"6fb976ab49dcec017f1e201e84395983204ae1a7c2abf7ced0a85d692e442799i0\n"
+"```"
+msgstr ""
+
+#: src/guides/teleburning.md:40
+msgid "Returns:"
+msgstr ""
+
+#: src/guides/teleburning.md:42
+msgid ""
+"```json\n"
+"{\n"
+"  \"ethereum\": \"0xe43A06530BdF8A4e067581f48Fae3b535559dA9e\"\n"
+"}\n"
+"```"
+msgstr ""
+
+#: src/guides/teleburning.md:48
+msgid ""
+"Indicating that `0xe43A06530BdF8A4e067581f48Fae3b535559dA9e` is the Ethereum "
+"teleburn address for inscription zero, which is, indeed, the current owner, "
+"on Ethereum, of `rodarmor.eth`."
 msgstr ""
 
 #: src/guides/collecting.md:4
@@ -3584,10 +4166,6 @@ msgid ""
 "new output location and address."
 msgstr ""
 
-#: src/guides/collecting/sparrow-wallet.md:173
-msgid "Troubleshooting"
-msgstr ""
-
 #: src/guides/collecting/sparrow-wallet.md:175
 msgid ""
 "Sparrow wallet is not showing a transaction/UTXO, but I can see it on "
@@ -3705,7 +4283,7 @@ msgstr ""
 #: src/guides/testing.md:34
 msgid ""
 "```\n"
-"bitcoin-cli generatetoaddress 101 <receive address>\n"
+"bitcoin-cli -regtest generatetoaddress 101 <receive address>\n"
 "```"
 msgstr ""
 
@@ -3727,7 +4305,7 @@ msgstr ""
 #: src/guides/testing.md:42
 msgid ""
 "```\n"
-"bitcoin-cli generatetoaddress 1 <receive address>\n"
+"bitcoin-cli -regtest generatetoaddress 1 <receive address>\n"
 "```"
 msgstr ""
 
@@ -3749,7 +4327,7 @@ msgstr ""
 #: src/guides/testing.md:53
 msgid ""
 "When testing out [recursion](../inscriptions/recursion.md), inscribe the "
-"dependencies first (example with [p5.js](https://p5js.org):"
+"dependencies first (example with [p5.js](https://p5js.org)):"
 msgstr ""
 
 #: src/guides/testing.md:55
@@ -3897,8 +4475,8 @@ msgstr ""
 #: src/guides/reindexing.md:4
 msgid ""
 "Sometimes the `ord` database must be reindexed, which means deleting the "
-"database and restarting the indexing process with either `ord index run` or "
-"`ord server`. Reasons to reindex are:"
+"database and restarting the indexing process with either `ord index update` "
+"or `ord server`. Reasons to reindex are:"
 msgstr ""
 
 #: src/guides/reindexing.md:8
@@ -3970,15 +4548,15 @@ msgstr ""
 msgid ""
 "```bash\n"
 "rm ~/Library/Application Support/ord/index.redb\n"
-"ord index run\n"
+"ord index update\n"
 "```"
 msgstr ""
 
 #: src/guides/reindexing.md:29
 msgid ""
 "You can of course also set the location of the data directory yourself with "
-"`ord --data-dir <DIR> index run` or give it a specific filename and path "
-"with `ord --index <FILENAME> index run`."
+"`ord --data-dir <DIR> index update` or give it a specific filename and path "
+"with `ord --index <FILENAME> index update`."
 msgstr ""
 
 #: src/bounties.md:1
